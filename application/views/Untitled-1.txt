@@ -1,0 +1,278 @@
+  //VALIDASI WAJIB DIISI
+                                            $('#btnupload').prop('disabled',true);
+                                            $('#validasi').val('Notifikasi : Anda harus mengisi data dengan lengkap !');
+
+                                            //validasi no dtb
+                                                $('#nodtbbaru').change(function(){
+                                                var nodtbbaru=document.getElementById("nodtbbaru").value;
+                                                var nobpprbaru=document.getElementById("nobpprbaru").value;
+                                                var nobaspbaru=document.getElementById("nobaspbaru").value;
+                                                var sjupload=document.getElementById("sj_upload").value;
+                                                var dtbupload=document.getElementById("dtb_upload").value;
+                                                var bpprupload=document.getElementById("bppr_upload").value;
+                                                var baspupload=document.getElementById("basp_upload").value;
+                                               
+                                                console.log(sjupload);
+                                                if(nodtbbaru != "")
+                                                {
+                                                    if(nobpprbaru==""|| nobaspbaru=="" || sjupload == "" || dtbupload  == "" || bpprupload=="" || baspupload=="")
+                                                    {
+                                                    $('#btnupload').prop('disabled',true);
+                                                    $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas ! !'); 
+                                                    }
+                                                    else{
+                                                        $('#btnupload').prop('disabled',false);
+                                                        $('#validasi').val(''); 
+                                                    }
+                                                }
+                                                else{
+                                                    $('#btnupload').prop('disabled',true);
+                                                    $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas ! !');
+                                                }
+                                                });
+
+                                                 //validasi no bppr
+                                                $('#nobpprbaru').change(function(){
+                                                var nodtbbaru=document.getElementById("nodtbbaru").value;
+                                                var nobpprbaru=document.getElementById("nobpprbaru").value;
+                                                var nobaspbaru=document.getElementById("nobaspbaru").value;
+                                                var sjupload=document.getElementById("sj_upload").value;
+                                                var dtbupload=document.getElementById("dtb_upload").value;
+                                                var bpprupload=document.getElementById("bppr_upload").value;
+                                                var baspupload=document.getElementById("basp_upload").value;
+                                                console.log(sjupload);
+                                                if(nobpprbaru != "")
+                                                {
+                                                    if(nodtbbaru==""|| nobaspbaru=="" || sjupload == "" || dtbupload  == "" || bpprupload=="" || baspupload=="")
+                                                    {
+                                                    $('#btnupload').prop('disabled',true);
+                                                    $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas  !'); 
+                                                    }
+                                                    else{
+                                                        $('#btnupload').prop('disabled',false);
+                                                        $('#validasi').val(''); 
+                                                    }
+                                                }
+                                                else{
+                                                    $('#btnupload').prop('disabled',true);
+                                                    $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas  !');
+                                                }
+                                                });
+
+                                                 //validasi no basp
+                                                 $('#nobaspbaru').change(function(){
+                                                var nodtbbaru=document.getElementById("nodtbbaru").value;
+                                                var nobpprbaru=document.getElementById("nobpprbaru").value;
+                                                var nobaspbaru=document.getElementById("nobaspbaru").value;
+                                                var sjupload=document.getElementById("sj_upload").value;
+                                                var dtbupload=document.getElementById("dtb_upload").value;
+                                                var bpprupload=document.getElementById("bppr_upload").value;
+                                                var baspupload=document.getElementById("basp_upload").value;
+                                                console.log(sjupload);
+                                                if(nobaspbaru != "")
+                                                {
+                                                    if(nodtbbaru==""|| nobpprbaru=="" || sjupload == "" || dtbupload  == "" || bpprupload=="" || baspupload=="")
+                                                    {
+                                                    $('#btnupload').prop('disabled',true);
+                                                    $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas ! '); 
+                                                    }
+                                                    else{
+                                                        $('#btnupload').prop('disabled',false);
+                                                        $('#validasi').val(''); 
+                                                    }
+                                                }
+                                                else{
+                                                    $('#btnupload').prop('disabled',true);
+                                                    $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas !');
+                                                }
+                                                });
+
+                                                
+                                                
+                                                //validasi SJ UPLOAD
+                                                $('#sj_upload').change(function(){
+                                                var nodtbbaru=document.getElementById("nodtbbaru").value;
+                                                var nobpprbaru=document.getElementById("nobpprbaru").value;
+                                                var nobaspbaru=document.getElementById("nobaspbaru").value;
+                                                var sjupload=document.getElementById("sj_upload").value;
+                                                var dtbupload=document.getElementById("dtb_upload").value;
+                                                var bpprupload=document.getElementById("bppr_upload").value;
+                                                var baspupload=document.getElementById("basp_upload").value;
+                                                var extensi=/(\.pdf)$/i;
+                                                var sizepdfsj=document.getElementById("sj_upload").files[0];
+                                                var sizepdfdtb=document.getElementById("dtb_upload").files[0];
+                                                var sizepdfbppr=document.getElementById("bppr_upload").files[0];
+                                                var sizepdfbasp=document.getElementById("basp_upload").files[0];
+                                                console.log(sjupload);
+                                                if(sjupload != "")
+                                                {
+                                                    if(!extensi.exec(sjupload))
+                                                    {  
+                                                        $('#btnupload').prop('disabled',true);
+                                                        $('#validasi').val('Notifikasi : Format file SJ harus pdf !'); 
+                                                    }
+                                                    else{
+                                                        if(sizepdfsj.size>500000)
+                                                            {
+                                                                $('#btnupload').prop('disabled',true);
+                                                                $('#validasi').val('Notifikasi : Size file SJ tidak boleh lebih dari 500 kb!'); 
+                                                            }
+                                                        else{
+                                                                if(nobpprbaru==""|| nobaspbaru=="" ||nodtbbaru == "" || dtbupload  == "" || bpprupload=="" || baspupload=="")
+                                                                {
+                                                                $('#btnupload').prop('disabled',true);
+                                                                $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas !'); 
+                                                                }
+                                                                else{
+                                                                    $('#btnupload').prop('disabled',false);
+                                                                    $('#validasi').val(''); 
+                                                                }
+                                                        }
+                                                    }
+                                                }
+                                                else{
+                                                    $('#btnupload').prop('disabled',true);
+                                                    $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas !');
+                                                }
+                                                });
+
+                                                //validasi dtb upload
+                                                $('#dtb_upload').change(function(){
+                                                var nodtbbaru=document.getElementById("nodtbbaru").value;
+                                                var nobpprbaru=document.getElementById("nobpprbaru").value;
+                                                var nobaspbaru=document.getElementById("nobaspbaru").value;
+                                                var sjupload=document.getElementById("sj_upload").value;
+                                                var dtbupload=document.getElementById("dtb_upload").value;
+                                                var bpprupload=document.getElementById("bppr_upload").value;
+                                                var baspupload=document.getElementById("basp_upload").value;
+                                                var extensi=/(\.pdf)$/i;
+                                                var sizepdfsj=document.getElementById("sj_upload").files[0];
+                                                var sizepdfdtb=document.getElementById("dtb_upload").files[0];
+                                                var sizepdfbppr=document.getElementById("bppr_upload").files[0];
+                                                var sizepdfbasp=document.getElementById("basp_upload").files[0];
+                                                console.log(sjupload);
+                                                if(dtbupload != "")
+                                                {
+                                                    if(!extensi.exec(dtbupload))
+                                                    {  
+                                                        $('#btnupload').prop('disabled',true);
+                                                        $('#validasi').val('Notifikasi : Format file DTB harus pdf !'); 
+                                                    }
+                                                    else{
+                                                        if(sizepdfdtb.size>500000 )
+                                                            {
+                                                                $('#btnupload').prop('disabled',true);
+                                                                $('#validasi').val('Notifikasi : Size file DTB tidak boleh lebih dari 500 kb!'); 
+                                                            }
+                                                        else{
+                                                            if(sjupload == "" ||  nobpprbaru==""|| nobaspbaru=="" || nodtbbaru  == "" || bpprupload=="" || baspupload=="")
+                                                            {
+                                                            $('#btnupload').prop('disabled',true);
+                                                            $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas !'); 
+                                                            }
+                                                            else{
+                                                                $('#btnupload').prop('disabled',false);
+                                                                $('#validasi').val(''); 
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                else{
+                                                    $('#btnupload').prop('disabled',true);
+                                                    $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas !');
+                                                }
+                                            });
+
+                                              //validasi bppr upload
+                                              $('#bppr_upload').change(function(){
+                                                var nodtbbaru=document.getElementById("nodtbbaru").value;
+                                                var nobpprbaru=document.getElementById("nobpprbaru").value;
+                                                var nobaspbaru=document.getElementById("nobaspbaru").value;
+                                                var sjupload=document.getElementById("sj_upload").value;
+                                                var dtbupload=document.getElementById("dtb_upload").value;
+                                                var bpprupload=document.getElementById("bppr_upload").value;
+                                                var baspupload=document.getElementById("basp_upload").value;
+                                                var extensi=/(\.pdf)$/i;
+                                                var sizepdfsj=document.getElementById("sj_upload").files[0];
+                                                var sizepdfdtb=document.getElementById("dtb_upload").files[0];
+                                                var sizepdfbppr=document.getElementById("bppr_upload").files[0];
+                                                var sizepdfbasp=document.getElementById("basp_upload").files[0];
+                                                console.log(sjupload);
+                                                if(bpprupload != "")
+                                                {
+                                                    if(!extensi.exec(bpprupload))
+                                                    {  
+                                                        $('#btnupload').prop('disabled',true);
+                                                        $('#validasi').val('Notifikasi : Format file BPPR harus pdf !'); 
+                                                    }
+                                                    else{
+                                                        if(sizepdfbppr.size>500000 )
+                                                            {
+                                                                $('#btnupload').prop('disabled',true);
+                                                                $('#validasi').val('Notifikasi : Size file BPPR tidak boleh lebih dari 500 kb!'); 
+                                                            }
+                                                        else{
+                                                                if(sjupload == "" ||  nobpprbaru==""|| nobaspbaru=="" || nodtbbaru  == "" || dtbupload=="" || baspupload=="")
+                                                                {
+                                                                $('#btnupload').prop('disabled',true);
+                                                                $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas !'); 
+                                                                }
+                                                                else{
+                                                                    $('#btnupload').prop('disabled',false);
+                                                                    $('#validasi').val(''); 
+                                                                }
+                                                        }
+                                                    }
+                                                }
+                                                else{
+                                                    $('#btnupload').prop('disabled',true);
+                                                    $('#validasi').val('Notifikasi :Mohon untuk melengkapi data form diatas !');
+                                                }
+                                            });
+
+                                              //validasi basp upload
+                                              $('#basp_upload').change(function(){
+                                                var nodtbbaru=document.getElementById("nodtbbaru").value;
+                                                var nobpprbaru=document.getElementById("nobpprbaru").value;
+                                                var nobaspbaru=document.getElementById("nobaspbaru").value;
+                                                var sjupload=document.getElementById("sj_upload").value;
+                                                var dtbupload=document.getElementById("dtb_upload").value;
+                                                var bpprupload=document.getElementById("bppr_upload").value;
+                                                var baspupload=document.getElementById("basp_upload").value;
+                                                var extensi=/(\.pdf)$/i;
+                                                var sizepdfsj=document.getElementById("sj_upload").files[0];
+                                                var sizepdfdtb=document.getElementById("dtb_upload").files[0];
+                                                var sizepdfbppr=document.getElementById("bppr_upload").files[0];
+                                                var sizepdfbasp=document.getElementById("basp_upload").files[0];
+                                                console.log(sjupload);
+                                                if(baspupload != "")
+                                                {
+                                                    if(!extensi.exec(baspupload))
+                                                    {  
+                                                        $('#btnupload').prop('disabled',true);
+                                                        $('#validasi').val('Notifikasi : Format file BASP harus pdf !'); 
+                                                    }
+                                                    else{
+                                                        if(sizepdfbasp.size>500000 )
+                                                            {
+                                                                $('#btnupload').prop('disabled',true);
+                                                                $('#validasi').val('Notifikasi : Size file BASP tidak boleh lebih dari 500 kb!'); 
+                                                            }
+                                                        else{
+                                                            if(sjupload == "" ||  nobpprbaru==""|| nobaspbaru=="" || nodtbbaru  == "" || dtbupload=="" || bpprupload=="")
+                                                            {
+                                                            $('#btnupload').prop('disabled',true);
+                                                            $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas !'); 
+                                                            }
+                                                            else{
+                                                                $('#btnupload').prop('disabled',false);
+                                                                $('#validasi').val(''); 
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                else{
+                                                    $('#btnupload').prop('disabled',true);
+                                                    $('#validasi').val('Notifikasi : Mohon untuk melengkapi data form diatas !');
+                                                }
+                                            });
